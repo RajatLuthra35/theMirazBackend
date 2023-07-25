@@ -8,7 +8,7 @@ import {
 } from "../controllers/userController.js";
 // import { protect } from "../middleware/authMiddleware.js";
 
-router.route("/").post(registerUser);
+router.route("/register").post(registerUser);
 router.post("/login", authUser);
 // protect is a middleWare which will check that the token is correct or wrong
 // router
