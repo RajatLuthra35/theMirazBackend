@@ -14,9 +14,7 @@ const app = express();
 // For accessing json data from the req and res
 app.use(express.json());
 app.use(cors(
-  {
-    origin: "http://localhost:3000"
-  }
+  
 ))
 
 app.get("/", (req, res) => {
