@@ -10,12 +10,10 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
+app.use(cors())
 // For accessing json data from the req and res
 app.use(express.json());
-app.use(cors(
-  
-))
+
 
 app.get("/", (req, res) => {
   res.send("Api is running...");
