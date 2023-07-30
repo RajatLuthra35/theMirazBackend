@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import userRoutes from "./routes/userRoutes.js";
-
+import cors from 'cors'
 dotenv.config();
 
 // Connecting to DB
@@ -13,6 +13,11 @@ const app = express();
 
 // For accessing json data from the req and res
 app.use(express.json());
+app.use(cors(
+  {
+    origin: "http://localhost:3000"
+  }
+))
 
 app.get("/", (req, res) => {
   res.send("Api is running...");
